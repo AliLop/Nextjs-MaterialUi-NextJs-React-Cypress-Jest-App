@@ -1,7 +1,8 @@
 // import Head from 'next/head'
 // import Image from 'next/image'
 
-import React from "react"; 
+import React from 'react'; 
+import { Button } from '@material-ui/core';
 
 
 export default function Home() {
@@ -14,9 +15,10 @@ export default function Home() {
       </Head> */}
 
       <main >
-        <h1 >
           Next with Material Ui
-        </h1>
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
       </main>
 
       {/* <footer className={styles.footer}>
