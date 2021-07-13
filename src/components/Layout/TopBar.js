@@ -1,9 +1,6 @@
 import Image from 'next/image'
-
-import Typography from '@material-ui/core/Typography';
-import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
-import { Box, Link } from '@material-ui/core';
-import NavBar from './Nav';
+import { AppBar, Toolbar, makeStyles, Typography, Box, Link } from '@material-ui/core';
+import NavBar from '../Nav';
 
 const useStyles = makeStyles((theme)  => ({
   root: {
@@ -19,14 +16,7 @@ const useStyles = makeStyles((theme)  => ({
   },
   logo: {
     cursor: 'pointer',
-  },
-  box: {
-    display: 'flex',
-    padding: 8,
-  },
-  minibox: {
-    padding: 8,
-  }      
+  }     
 }))
 
 function TopBar() {
@@ -36,7 +26,6 @@ function TopBar() {
     <AppBar className={classes.root} color="default">
       <Toolbar className={classes.toolbar}>
         <Box>
-          {/* <MenuIcon /> */}
           <Link href='/'>
             <Image src="/vercel.svg" alt="Logo" width={72} height={18} className={classes.logo} />
           </Link>

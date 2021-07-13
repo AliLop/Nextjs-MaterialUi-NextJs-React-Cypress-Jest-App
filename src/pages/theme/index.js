@@ -22,7 +22,7 @@ const theme = createTheme({
       primary: blueGrey[900],
       secondary: blueGrey[600],
     },
-    spacing: 8,
+    spacing: 6,
   },
 });
 

@@ -5,7 +5,6 @@ import Layout from '../components/Layout'
 
 export default function Home() {
   return (
-    <Layout title="Nextjs App">
       <div>
         <main >
             Next with Material Ui
@@ -14,6 +13,5 @@ export default function Home() {
             </Button>
         </main>
       </div>
-    </Layout>
   )
 }

@@ -1,17 +1,13 @@
-//component - not route
 import { makeStyles } from '@material-ui/core';
 import Head from 'next/head';
 
 import TopBar from './TopBar';
-// import Header from './Header'
 import Footer from './Footer'
 
 
 const useStyles = makeStyles((theme)  => ({
   root: {
     background: theme.palette.background.dark,
-    //display: 'flex',
-    //height: '80vh',
     overflow: 'hidden',
     width: '100%',
   },
@@ -49,7 +45,6 @@ function Layout({children, title}) {
         <div className={classes.root}>
           <TopBar/>
           <div className={classes.wrapper}>
-                  {/* <Header /> */}
             <div className={classes.contentContainer}>
               <div className={classes.content}>{children}</div>
             </div>
