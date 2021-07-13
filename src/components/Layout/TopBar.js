@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
 import Typography from '@material-ui/core/Typography';
-import { AppBar, Toolbar, IconButton, makeStyles } from '@material-ui/core';
+import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
 import { Box, Link } from '@material-ui/core';
-//import MenuIcon from '@material-ui/icons/Menu';
+import NavBar from './Nav';
 
 const useStyles = makeStyles((theme)  => ({
   root: {
@@ -46,18 +46,7 @@ function TopBar() {
             My NextJs App
           </Typography>
         </Box>
-        <Box className={classes.box}>
-          <Box className={classes.minibox}>
-            <Link href='/'><Typography color="secondary">
-              Home 
-            </Typography></Link>
-          </Box>
-          <Box className={classes.minibox}>
-            <Link href='/about'><Typography color="secondary">
-              About
-            </Typography></Link>
-          </Box>
-        </Box>
+        <NavBar></NavBar>
       </Toolbar>
     </AppBar>
   );
