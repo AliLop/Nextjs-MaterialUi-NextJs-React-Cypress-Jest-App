@@ -3,21 +3,21 @@ import { makeStyles } from '@material-ui/core';
 import Head from 'next/head';
 
 import TopBar from './TopBar';
-// import Nav from './Nav'
 // import Header from './Header'
-// import Footer from './Footer'
+import Footer from './Footer'
 
 
 const useStyles = makeStyles((theme)  => ({
   root: {
     background: theme.palette.background.dark,
-    display: 'flex',
-    height: '100vh',
+    //display: 'flex',
+    //height: '80vh',
     overflow: 'hidden',
     width: '100%',
   },
   wrapper: {
     display: 'flex',
+    height: '90vh',
     flex: '1 1 auto',
     overflow: 'hidden',
     paddingTop: 64,
@@ -48,14 +48,14 @@ function Layout({children, title}) {
 
         <div className={classes.root}>
           <TopBar/>
-          {/* <NavBar/> */}
           <div className={classes.wrapper}>
                   {/* <Header /> */}
             <div className={classes.contentContainer}>
               <div className={classes.content}>{children}</div>
             </div>
           </div>
-          {/* <Footer/> */}
+          <hr/>
+          <Footer/>
         </div>
       </>
     )

@@ -6,28 +6,25 @@ const useStyles = makeStyles(()  => ({
   box: {
     display: 'flex',
     padding: 8,
-  },
-  minibox: {
-    padding: 8,
-  }      
+  }    
 }))
 
 function NavBar() {
   const classes = useStyles();
 
   return (
-        <Box className={classes.box}>
-          <Box className={classes.minibox}>
-            <Link href='/'><Typography color="secondary">
-              Home 
-            </Typography></Link>
-          </Box>
-          <Box className={classes.minibox}>
-            <Link href='/about'><Typography color="secondary">
-              About
-            </Typography></Link>
-          </Box>
-        </Box>
+    <Box className={classes.box}>
+      <Box className={classes.box}>
+        <Link href='/'><Typography color="secondary">
+          Home 
+        </Typography></Link>
+      </Box>
+      <Box className={classes.box}>
+        <Link href='/about'><Typography color="secondary">
+          About
+        </Typography></Link>
+      </Box>
+    </Box>
   );
 }
 
