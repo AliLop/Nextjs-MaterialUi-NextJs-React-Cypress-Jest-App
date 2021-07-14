@@ -1,11 +1,11 @@
 import { makeStyles } from '@material-ui/core';
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 
 import TopBar from './TopBar';
-import Footer from './Footer'
+import Footer from './Footer';
 
-
-const useStyles = makeStyles((theme)  => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.background.dark,
     overflow: 'hidden',
@@ -17,43 +17,50 @@ const useStyles = makeStyles((theme)  => ({
     flex: '1 1 auto',
     overflow: 'hidden',
     paddingTop: 64,
-    paddingLeft: 256,
-    minWidth: 1280
+    minWidth: 1280,
   },
   contentContainer: {
     display: 'flex',
     flex: '1 1 auto',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   content: {
     flex: '1 1 auto',
     height: '100%',
-    overflow: 'auto'
-  }
-}))
+    overflow: 'auto',
+  },
+}));
 
-function Layout({children, title}) {
+function Layout({ children, title }) {
   const classes = useStyles();
-    return (
-      <>
-        <Head>
-          <title>{title}</title>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 
-        <div className={classes.root}>
-          <TopBar/>
-          <div className={classes.wrapper}>
-            <div className={classes.contentContainer}>
-              <div className={classes.content}>{children}</div>
-            </div>
+      <div className={classes.root}>
+        <TopBar />
+        <div className={classes.wrapper}>
+          <div className={classes.contentContainer}>
+            <div className={classes.content}>{children}</div>
           </div>
-          <hr/>
-          <Footer/>
         </div>
-      </>
-    )
+        <hr />
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default Layout
+Head.defaultProps = {
+  title: 'NextJs App',
+};
+
+Head.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+export default Layout;
