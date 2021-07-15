@@ -29,7 +29,7 @@ function Cocktail({ data }) {
   return (
     <Container maxWidth="xs">
       <Card sx={{ maxWidth: 150 }}>
-        <CardActionArea>
+        <CardActionArea href={`/${data.idDrink}`}>
           <CardMedia
             component="img"
             sx={{ height: 140 }}
