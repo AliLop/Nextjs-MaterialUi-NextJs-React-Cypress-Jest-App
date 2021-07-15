@@ -24,15 +24,17 @@ function Cocktail({ data }) {
 
   //   getData();
   // }, []);
-  //console.log('DATA const', data);
+  // console.log('DATA const', data);
+
   return (
     <Container maxWidth="xs">
       <Card sx={{ maxWidth: 150 }}>
         <CardActionArea>
-          <CardMedia sx={{ height: 140 }} title={`cocktail ${data.strDrink}`} />
-          <img
-            src={`${data.strDrinkThumb}/preview`}
-            style={{ minInlineSize: '-webkit-fill-available' }}
+          <CardMedia
+            component="img"
+            sx={{ height: 140 }}
+            title={`cocktail ${data.strDrink}`}
+            image={`${data.strDrinkThumb}/preview`}
           />
           <CardContent>
             <Typography

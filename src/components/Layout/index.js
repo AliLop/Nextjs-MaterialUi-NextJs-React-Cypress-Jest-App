@@ -55,6 +55,10 @@ function Layout({ children, title }) {
   );
 }
 
+Head.defaultProps = {
+  title: 'My Cocktails',
+};
+
 Head.propTypes = {
   title: PropTypes.string.isRequired,
 };

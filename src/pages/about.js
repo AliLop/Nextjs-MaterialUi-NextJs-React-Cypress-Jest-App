@@ -13,7 +13,7 @@ function about() {
       </Head>
 
       <Container>
-        <Header subtitle="About"></Header>
+        <Header subtitle="About" />
         <Typography variant="h6" color="textPrimary" align="center">
           Version 1.0.0
         </Typography>
