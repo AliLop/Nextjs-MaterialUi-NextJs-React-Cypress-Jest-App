@@ -45,12 +45,6 @@ function Cocktail({ data }) {
             >
               {data.strDrink}
             </Typography>
-            {/* <Typography variant="body2" color="primary">
-            Category: {data.strCategory}
-          </Typography>
-          <Typography variant="body2" color="primary">
-            Best in {data.strGlass}
-          </Typography> */}
           </CardContent>
         </CardActionArea>
       </Card>

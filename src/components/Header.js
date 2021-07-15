@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Header({ subtitle }) {
   return (
     <Container>
-      <div style={{ margin: '50px 0' }}>
+      <div style={{ margin: '25px 0' }}>
         <Typography variant="h4" color="textSecondary" align="center">
           {subtitle}
         </Typography>

@@ -7,7 +7,7 @@ export default function Home({ data }) {
   return (
     <div>
       <Container>
-        <Header subtitle="All Coktails" />
+        <Header subtitle="All Cocktails" />
         {data.length ? (
           <Grid container spacing={2}>
             {data.map((drink) => (
