@@ -45,11 +45,10 @@ function Footer() {
               height={18}
               className={classes.logo}
             />
-          </span>{' '}
+          </span>
           <span className={classes.copy}>
             {'Copyright © '}
-            {new Date().getFullYear()}
-            '.'
+            {new Date().getFullYear()}.
           </span>
         </Link>
       </Typography>

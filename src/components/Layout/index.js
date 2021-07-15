@@ -55,10 +55,6 @@ function Layout({ children, title }) {
   );
 }
 
-Head.defaultProps = {
-  title: 'NextJs App',
-};
-
 Head.propTypes = {
   title: PropTypes.string.isRequired,
 };

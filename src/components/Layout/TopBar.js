@@ -44,7 +44,9 @@ function TopBar() {
           </Link>
         </Box>
         <Box>
-          <Typography color="secondary">My NextJs App</Typography>
+          <Typography variant="h5" color="secondary">
+            My Cocktails
+          </Typography>
         </Box>
         <NavBar />
       </Toolbar>
