@@ -22,7 +22,10 @@ const theme = createTheme({
       primary: blueGrey[900],
       secondary: blueGrey[600],
     },
-    spacing: 6,
+  },
+  spacing: 6,
+  typography: {
+    fontFamily: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'].join(','),
   },
 });
 

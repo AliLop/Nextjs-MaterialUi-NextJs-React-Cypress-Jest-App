@@ -21,7 +21,7 @@ function about() {
         <Typography variant="h6" color="textSecondary" align="center">
           <Link href="/" passHref>
             <span style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              Go back
+              Go back to home
             </span>
           </Link>
         </Typography>

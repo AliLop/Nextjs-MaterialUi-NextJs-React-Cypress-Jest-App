@@ -1,13 +1,34 @@
-import { Container, Typography } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import {
+  Container,
+  Typography,
+  Button,
+  CardMedia,
+  Card,
+  CardContent,
+} from '@material-ui/core';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import Header from '../../components/Header';
 
-import Header from '../components/Header';
+function Redirect({ to }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(to);
+  }, [to]);
+
+  return null;
+}
 
 export default function cocktailPage({ drinkData }) {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  if (shouldRedirect) {
+    return <Redirect to="/" />;
+  }
   return (
     <Container maxWidth="sm">
+      <Button onClick={() => setShouldRedirect(true)}>Go back to Main</Button>
       <Header subtitle={`Cocktail ${drinkData.strDrink}`} />
       <Card>
         <CardMedia

@@ -1,6 +1,5 @@
-import Typography from '@material-ui/core/Typography';
 import Image from 'next/image';
-import { Link, makeStyles } from '@material-ui/core';
+import { Link, makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   logo: {

@@ -1,9 +1,12 @@
 // /import { useEffect, useState } from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { CardActionArea, Container } from '@material-ui/core';
+import {
+  CardActionArea,
+  Container,
+  CardMedia,
+  Typography,
+  Card,
+  CardContent,
+} from '@material-ui/core';
 
 function Cocktail({ data }) {
   // const [data, setData] = useState([]);
@@ -29,7 +32,7 @@ function Cocktail({ data }) {
   return (
     <Container maxWidth="xs">
       <Card sx={{ maxWidth: 150 }}>
-        <CardActionArea href={`/${data.idDrink}`}>
+        <CardActionArea href={`/cocktail/${data.idDrink}`}>
           <CardMedia
             component="img"
             sx={{ height: 140 }}
