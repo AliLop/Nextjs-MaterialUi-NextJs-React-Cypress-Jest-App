@@ -40,7 +40,7 @@ export default function Home({ data }) {
 // Server Side
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?c=Cocktail`,
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
   );
   const data = await res.json();
   return {
