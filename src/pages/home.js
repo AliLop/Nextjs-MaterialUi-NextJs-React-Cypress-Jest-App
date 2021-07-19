@@ -6,7 +6,7 @@ function Redirect({ to }) {
 
   useEffect(() => {
     router.push(to);
-  }, [to]);
+  }, [router, to]);
 
   return null;
 }

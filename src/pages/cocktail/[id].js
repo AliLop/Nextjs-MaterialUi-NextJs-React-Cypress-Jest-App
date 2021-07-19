@@ -15,12 +15,12 @@ function Redirect({ to }) {
 
   useEffect(() => {
     router.push(to);
-  }, [to]);
+  }, [router, to]);
 
   return null;
 }
 
-export default function cocktailPage({ drinkData }) {
+export default function CocktailPage({ drinkData }) {
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   if (shouldRedirect) {
