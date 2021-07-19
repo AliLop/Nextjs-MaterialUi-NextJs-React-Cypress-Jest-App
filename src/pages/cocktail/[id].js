@@ -52,30 +52,41 @@ export default function cocktailPage({ drinkData }) {
   );
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-  );
-  const data = await res.json();
+// Static
+// export async function getStaticPaths() {
+//   const res = await fetch(
+//     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
+//   );
+//   const data = await res.json();
+//   const paths = data.drinks.map((drink) => ({
+//     params: { id: drink.idDrink },
+//   }));
+//   return { paths, fallback: false };
+// }
 
-  const paths = data.drinks.map((drink) => ({
-    params: { id: drink.idDrink },
-  }));
+// export async function getStaticProps({ params }) {
+//   const { id } = params;
+//   const details = await fetch(
+//     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+//   );
 
-  return { paths, fallback: false };
-}
+//   const detailsById = await details.json();
+//   // 178341
+//   return {
+//     props: {
+//       drinkData: detailsById.drinks[0],
+//     },
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
-
+// Server Side
+export async function getServerSideProps(context) {
   const details = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${context.params.id}`,
   );
   const detailsById = await details.json();
-
   // 178341
   // console.log('detailsbyid', detailsById);
-
   return {
     props: {
       drinkData: detailsById.drinks[0],
