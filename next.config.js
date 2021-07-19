@@ -3,6 +3,21 @@ module.exports = {
   // future: {
   //   webpack5: true,
   // },
+  images: {
+    loader: 'imgix',
+    path: '/',
+  },
+  trailingSlash: true,
+  // exportPathMap: async function (
+  //   defaultPathMap,
+  //   { dev, dir, outDir, distDir, buildId },
+  // ) {
+  //   return {
+  //     '/': { page: '/' },
+  //     '/about': { page: '/about' },
+  //     '/cocktail/178341': { page: '/cocktail', query: { id: '178341' } },
+  //   };
+  // },
   webpack(config) {
     config.module.rules.push({
       // Ref: https://stackoverflow.com/questions/55175445/cant-import-svg-into-next-js

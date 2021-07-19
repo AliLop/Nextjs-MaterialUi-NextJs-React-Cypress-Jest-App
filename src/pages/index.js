@@ -24,21 +24,7 @@ export default function Home({ data }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch(
-//     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-//   );
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       data: data.drinks,
-//     },
-//   };
-// }
-
-// Server Side
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
   );
@@ -49,3 +35,16 @@ export async function getServerSideProps() {
     },
   };
 }
+
+// Server Side
+// export async function getServerSideProps() {
+//   const res = await fetch(
+//     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
+//   );
+//   const data = await res.json();
+//   return {
+//     props: {
+//       data: data.drinks,
+//     },
+//   };
+// }
