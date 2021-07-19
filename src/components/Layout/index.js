@@ -7,13 +7,13 @@ import Footer from './Footer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: theme.palette.background.dark,
+    background: theme.palette.background.default,
     overflow: 'hidden',
     width: '100%',
   },
   wrapper: {
     display: 'flex',
-    height: '90vh',
+    height: '92vh',
     flex: '1 1 auto',
     overflow: 'hidden',
     paddingTop: 64,
@@ -48,7 +48,6 @@ function Layout({ children, title }) {
             <div className={classes.content}>{children}</div>
           </div>
         </div>
-        <hr />
         <Footer />
       </div>
     </>
@@ -56,7 +55,7 @@ function Layout({ children, title }) {
 }
 
 Head.defaultProps = {
-  title: 'My Cocktails',
+  title: 'Cocktail Bar',
 };
 
 Head.propTypes = {

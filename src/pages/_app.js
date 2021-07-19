@@ -21,7 +21,7 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <title>My Cocktails</title>
+        <title>Cocktail Bar</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -32,7 +32,7 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Layout title="My Cocktails">
+        <Layout title="Cocktail Bar">
           <CssBaseline />
           <Component {...pageProps} />
         </Layout>

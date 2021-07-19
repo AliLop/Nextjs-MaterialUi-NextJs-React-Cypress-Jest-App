@@ -5,6 +5,7 @@ import {
   CardMedia,
   Card,
   CardContent,
+  Box,
 } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -27,10 +28,16 @@ export default function CocktailPage({ drinkData }) {
     return <Redirect to="/" />;
   }
   return (
-    <Container maxWidth="sm">
-      <Button onClick={() => setShouldRedirect(true)}>Go back to Main</Button>
+    <Container maxWidth="md">
       <Header subtitle={`Cocktail ${drinkData.strDrink}`} />
-      <Card>
+      <Card
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          backgroundColor: '#FFEFD5',
+          marginTop: '30px',
+        }}
+      >
         <CardMedia
           component="img"
           sx={{ height: 140 }}
@@ -38,15 +45,41 @@ export default function CocktailPage({ drinkData }) {
           image={`${drinkData.strDrinkThumb}/preview`}
         />
         <CardContent>
-          <Typography variant="body1" color="primary">
-            Best served in: {drinkData.strGlass}
+          <Typography
+            style={{ display: 'inline-block' }}
+            variant="h6"
+            color="primary"
+          >
+            Best served in:
+          </Typography>{' '}
+          <Typography
+            style={{ display: 'inline-block' }}
+            variant="body1"
+            color="initial"
+          >
+            {drinkData.strGlass}{' '}
           </Typography>
-          <Typography variant="body1" color="primary">
-            Instructions: <br />
-            {drinkData.strInstructions}
+          <br />
+          <br />
+          <Typography variant="h6" color="primary">
+            {' '}
+            Instructions:{' '}
+          </Typography>
+          <Typography variant="body1" color="initial">
+            {drinkData.strInstructions.split('.')}{' '}
           </Typography>
         </CardContent>
       </Card>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Box m={4}>
+          <Button
+            onClick={() => setShouldRedirect(true)}
+            style={{ padding: '20px', color: '#B8860B' }}
+          >
+            Go back to Main
+          </Button>
+        </Box>
+      </div>
       <br />
     </Container>
   );

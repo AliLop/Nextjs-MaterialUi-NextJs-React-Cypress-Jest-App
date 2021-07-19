@@ -7,7 +7,7 @@ import {
   Box,
   Link,
 } from '@material-ui/core';
-import NavBar from '../Nav';
+import NavBar from '../NavBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   toolbar: {
-    minHeight: 64,
+    minHeight: 60,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -44,8 +44,8 @@ function TopBar() {
           </Link>
         </Box>
         <Box>
-          <Typography variant="h5" color="secondary">
-            My Cocktails
+          <Typography variant="h6" color="secondary">
+            Cocktail Bar
           </Typography>
         </Box>
         <NavBar />

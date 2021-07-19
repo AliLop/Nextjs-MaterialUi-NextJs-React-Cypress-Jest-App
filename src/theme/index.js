@@ -5,22 +5,23 @@ import { red, green, amber, blueGrey } from '@material-ui/core/colors';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3F51B5',
+      main: '#B8860B',
     },
     secondary: {
-      main: green.A400,
+      main: '#FAFAD2',
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: amber,
+      default: '#D3D3D3',
       dark: '#f4f6f8',
-      paper: amber,
+      paper: '#FFF0F5',
     },
     text: {
       primary: blueGrey[900],
-      secondary: blueGrey[600],
+      secondary: '#DAA520',
+      initial: '#f4f6f8',
     },
   },
   spacing: 6,

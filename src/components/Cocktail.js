@@ -39,7 +39,7 @@ function Cocktail({ data }) {
             title={`cocktail ${data.strDrink}`}
             image={`${data.strDrinkThumb}/preview`}
           />
-          <CardContent>
+          <CardContent style={{ backgroundColor: '#FFEFD5' }}>
             <Typography
               gutterBottom
               variant="h6"
