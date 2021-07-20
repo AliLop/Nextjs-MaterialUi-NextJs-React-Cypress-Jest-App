@@ -33,7 +33,7 @@ function NavBar() {
             }}
             color={window === 'about' ? 'textSecondary' : 'secondary'}
           >
-            About
+            <span data-cy="about-btn">About</span>
           </Typography>
         </Link>
       </Box>

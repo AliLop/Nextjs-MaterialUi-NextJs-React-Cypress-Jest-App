@@ -12,7 +12,9 @@ export default function Home({ data }) {
           <Grid container spacing={2}>
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
-                <Cocktail data={drink} />
+                <span data-cy="cocktail-card">
+                  <Cocktail data={drink} />
+                </span>
               </Grid>
             ))}{' '}
           </Grid>
@@ -24,21 +26,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-  );
-  const data = await res.json();
-  return {
-    props: {
-      data: data.drinks,
-    },
-    revalidate: 10,
-  };
-}
-
-// Server Side
-// export async function getServerSideProps() {
+// export async function getStaticProps() {
 //   const res = await fetch(
 //     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
 //   );
@@ -47,5 +35,19 @@ export async function getStaticProps() {
 //     props: {
 //       data: data.drinks,
 //     },
+//     revalidate: 10,
 //   };
 // }
+
+// Server Side
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
+  );
+  const data = await res.json();
+  return {
+    props: {
+      data: data.drinks,
+    },
+  };
+}

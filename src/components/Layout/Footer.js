@@ -16,7 +16,7 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <>
+    <div data-cy="footer">
       <hr
         style={{
           color: '#B8860B',
@@ -63,7 +63,7 @@ function Footer() {
           </Link>
         </Typography>
       </div>
-    </>
+    </div>
   );
 }
 
