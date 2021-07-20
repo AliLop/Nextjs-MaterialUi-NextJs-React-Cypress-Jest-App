@@ -33,6 +33,7 @@ export async function getStaticProps() {
     props: {
       data: data.drinks,
     },
+    revalidate: 10,
   };
 }
 

@@ -6,9 +6,9 @@ function NavBar() {
   const router = useRouter();
   let window = '';
 
-  if (router.pathname == '/') {
+  if (router.pathname === '/') {
     window = 'home';
-  } else if (router.pathname == '/about') {
+  } else if (router.pathname === '/about') {
     window = 'about';
   }
 

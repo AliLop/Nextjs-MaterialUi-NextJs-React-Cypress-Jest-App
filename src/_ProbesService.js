@@ -26,3 +26,25 @@
 //     'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail',
 //   );
 // }
+
+// /import { useEffect, useState } from 'react';
+
+// const [data, setData] = useState([]);
+
+// const fetchData = async () => {
+//   const res = await getStaticProps();
+//   const dataResp = await res;
+
+//   console.log('RESP', dataResp);
+//   return dataResp;
+// };
+
+// useEffect(() => {
+//   const getData = async () => {
+//     //const dataFromServer = await fetchData();
+//     setData(data);
+//   };
+
+//   getData();
+// }, []);
+// console.log('DATA const', data);

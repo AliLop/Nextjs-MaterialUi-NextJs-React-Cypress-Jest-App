@@ -1,4 +1,3 @@
-// /import { useEffect, useState } from 'react';
 import {
   CardActionArea,
   Container,
@@ -9,26 +8,6 @@ import {
 } from '@material-ui/core';
 
 function Cocktail({ data }) {
-  // const [data, setData] = useState([]);
-
-  // const fetchData = async () => {
-  //   const res = await getStaticProps();
-  //   const dataResp = await res;
-
-  //   console.log('RESP', dataResp);
-  //   return dataResp;
-  // };
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     //const dataFromServer = await fetchData();
-  //     setData(data);
-  //   };
-
-  //   getData();
-  // }, []);
-  // console.log('DATA const', data);
-
   return (
     <Container maxWidth="xs">
       <Card sx={{ maxWidth: 150 }}>
