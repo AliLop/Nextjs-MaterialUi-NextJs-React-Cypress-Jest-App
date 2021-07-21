@@ -1,10 +1,8 @@
 /// <rference types="cypress"/>
 
-// npm run cypress:run -- --spec "cypress/integration/home.spec.js"
-
-context('Home Page', () => {
+context('Cocktail Page', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/cocktail/17005/');
   });
 
   it('Should find index page and TopBar', () => {
@@ -19,19 +17,22 @@ context('Home Page', () => {
   it('Find the Subtitle and check it', () => {
     cy.get('[data-cy=header]')
       .get('[data-cy=subtitle]')
-      .contains('Cocktail Menu');
+      .contains('Cocktail A True Amaretto Sour')
+      .should('be.visible');
   });
 
-  it('Check for a 100 cocktail Cards', () => {
-    cy.get('[data-cy=cocktail-card]').should('have.length', 100).find('img');
+  it('Verify cocktail Info', () => {
+    cy.get('[data-cy=instructions]');
+    cy.expect('[data-cy=instructions]').to.not.be.empty;
   });
 
-  it('Verify first cocktail Card', () => {
-    cy.get('[data-cy=cocktail-name]')
-      .first()
-      .should('have.text', '155 Belmont')
+  it('Find the Go back to Main button and go to Home page', () => {
+    cy.get('[data-cy=back-btn]')
+      .contains('Go back to Main')
+      .should('be.visible')
       .click();
-    cy.url().should('include', '/cocktail/15346/');
+
+    cy.url().should('eq', Cypress.config().baseUrl + '/');
   });
 
   it('Should find Footer', () => {

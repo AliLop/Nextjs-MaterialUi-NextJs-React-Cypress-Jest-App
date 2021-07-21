@@ -7,7 +7,7 @@ import {
   CardContent,
 } from '@material-ui/core';
 
-function Cocktail({ data }) {
+function CocktailCard({ data }) {
   return (
     <Container maxWidth="xs">
       <Card sx={{ maxWidth: 150 }}>
@@ -25,7 +25,7 @@ function Cocktail({ data }) {
               component="div"
               align="center"
             >
-              {data.strDrink}
+              <span data-cy="cocktail-name">{data.strDrink}</span>
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -34,4 +34,4 @@ function Cocktail({ data }) {
   );
 }
 
-export default Cocktail;
+export default CocktailCard;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Container, CircularProgress } from '@material-ui/core';
-import Cocktail from '../components/Cocktail';
+import CocktailCard from '../components/CocktailCard';
 import Header from '../components/Header';
 
 export default function Home({ data }) {
@@ -13,7 +13,7 @@ export default function Home({ data }) {
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
                 <span data-cy="cocktail-card">
-                  <Cocktail data={drink} />
+                  <CocktailCard data={drink} />
                 </span>
               </Grid>
             ))}{' '}

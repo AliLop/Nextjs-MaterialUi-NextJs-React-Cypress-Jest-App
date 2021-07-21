@@ -79,18 +79,20 @@ export default function CocktailPage({ drinkData }) {
                 Instructions:{' '}
               </Typography>
               <Typography variant="body1" color="initial">
-                {drinkData.strInstructions.split('.')}{' '}
+                <span data-cy="instructions">{drinkData.strInstructions}</span>{' '}
               </Typography>
             </CardContent>
           </Card>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Box m={4}>
-              <Button
-                onClick={() => setShouldRedirect(true)}
-                style={{ padding: '20px', color: '#B8860B' }}
-              >
-                Go back to Main
-              </Button>
+              <span data-cy="back-btn">
+                <Button
+                  onClick={() => setShouldRedirect(true)}
+                  style={{ padding: '20px', color: '#B8860B' }}
+                >
+                  Go back to Main
+                </Button>
+              </span>
             </Box>
           </div>
           <br />
