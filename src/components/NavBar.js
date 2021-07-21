@@ -10,6 +10,8 @@ function NavBar() {
     window = 'home';
   } else if (router.pathname === '/about') {
     window = 'about';
+  } else if (router.pathname === '/favorites') {
+    window = 'fav';
   }
 
   return (
@@ -21,6 +23,16 @@ function NavBar() {
             color={window === 'home' ? 'textSecondary' : 'secondary'}
           >
             Home
+          </Typography>
+        </Link>
+      </Box>
+      <Box>
+        <Link href="/favorites" passHref>
+          <Typography
+            style={{ paddingRight: '20px' }}
+            color={window === 'fav' ? 'textSecondary' : 'secondary'}
+          >
+            Favorites
           </Typography>
         </Link>
       </Box>
