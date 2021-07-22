@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Layout({ children, title }) {
+function Layout({ children }) {
   const classes = useStyles();
   return (
     <>

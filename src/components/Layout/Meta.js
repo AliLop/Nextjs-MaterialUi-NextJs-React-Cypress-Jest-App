@@ -21,7 +21,7 @@ Meta.defaultProps = {
 };
 
 Meta.propTypes = {
-  title: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  keywords: PropTypes.string,
+  description: PropTypes.string,
 };
