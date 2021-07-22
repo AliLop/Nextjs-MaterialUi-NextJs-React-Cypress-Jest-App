@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Container, CircularProgress } from '@material-ui/core';
 import CocktailCard from '../components/CocktailCard';
 import Header from '../components/Header';
+import { server } from '../config';
 
 export default function Home({ data }) {
   return (
@@ -26,24 +27,8 @@ export default function Home({ data }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch(
-//     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-//   );
-//   const data = await res.json();
-//   return {
-//     props: {
-//       data: data.drinks,
-//     },
-//     revalidate: 10,
-//   };
-// }
-
-// Server Side
 export async function getServerSideProps() {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-  );
+  const res = await fetch(`${server}`);
   const data = await res.json();
   return {
     props: {

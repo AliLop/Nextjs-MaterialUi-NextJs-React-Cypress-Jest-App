@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Header from '../../../components/Header';
+import { server, idServer } from '../../../config';
 
 function Redirect({ to }) {
   const router = useRouter();
@@ -75,8 +76,7 @@ export default function CocktailPage({ drinkData }) {
               <br />
               <br />
               <Typography variant="h6" color="primary">
-                {' '}
-                Instructions:{' '}
+                Instructions:
               </Typography>
               <Typography variant="body1" color="initial">
                 <span data-cy="instructions">{drinkData.strInstructions}</span>{' '}
@@ -102,11 +102,8 @@ export default function CocktailPage({ drinkData }) {
   );
 }
 
-// Static
 export async function getStaticPaths() {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-  );
+  const res = await fetch(`${server}`);
   const data = await res.json();
   const paths = data.drinks.map((drink) => ({
     params: { id: drink.idDrink.toString() },
@@ -116,9 +113,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const details = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
-  );
+  const details = await fetch(`${idServer}${id}`);
   const detailsById = await details.json();
   return {
     props: {
@@ -127,16 +122,3 @@ export async function getStaticProps({ params }) {
     revalidate: 10,
   };
 }
-
-// Server Side
-// export async function getServerSideProps(context) {
-//   const details = await fetch(
-//     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${context.params.id}`,
-//   );
-//   const detailsById = await details.json();
-//   return {
-//     props: {
-//       drinkData: detailsById.drinks[0],
-//     },
-//   };
-// }

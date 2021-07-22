@@ -1,19 +1,22 @@
-import { Container, Typography } from '@material-ui/core';
+import { Container, Box } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 function Header({ subtitle }) {
   return (
     <Container>
-      <div style={{ margin: '15px 0' }} data-cy="header">
-        <Typography
-          variant="h4"
-          color="textSecondary"
+      <span data-cy="header">
+        <Box
+          my={3}
           align="center"
-          style={{ fontWeight: '800' }}
+          color="text.secondary"
+          sx={{
+            fontWeight: 800,
+            fontSize: 30,
+          }}
         >
           <span data-cy="subtitle">{subtitle}</span>
-        </Typography>
-      </div>
+        </Box>
+      </span>
     </Container>
   );
 }

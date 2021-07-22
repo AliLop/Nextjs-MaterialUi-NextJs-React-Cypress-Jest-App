@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
-import Head from 'next/head';
-import PropTypes from 'prop-types';
 
+import Meta from './Meta';
 import TopBar from './TopBar';
 import Footer from './Footer';
 
@@ -35,12 +34,7 @@ function Layout({ children, title }) {
   const classes = useStyles();
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-
+      <Meta />
       <div className={classes.root}>
         <TopBar />
         <div className={classes.wrapper}>
@@ -53,13 +47,5 @@ function Layout({ children, title }) {
     </>
   );
 }
-
-Head.defaultProps = {
-  title: 'Cocktail Bar',
-};
-
-Head.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default Layout;

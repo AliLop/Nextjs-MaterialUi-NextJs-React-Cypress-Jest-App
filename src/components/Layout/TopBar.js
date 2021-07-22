@@ -43,11 +43,9 @@ function TopBar() {
             />
           </Link>
         </Box>
-        <Box>
-          <Typography variant="h6" color="secondary">
-            Cocktail Bar
-          </Typography>
-        </Box>
+        <Typography variant="h6" color="secondary">
+          Cocktail Bar
+        </Typography>
         <NavBar />
       </Toolbar>
     </AppBar>

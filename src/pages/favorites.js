@@ -1,6 +1,7 @@
 import { Grid, Container, CircularProgress } from '@material-ui/core';
 import CocktailCard from '../components/CocktailCard';
 import Header from '../components/Header';
+import { favServer } from '../config';
 
 export default function Favorites({ data }) {
   return (
@@ -26,7 +27,7 @@ export default function Favorites({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/favCocktails');
+  const res = await fetch(`${favServer}`);
   const data = await res.json();
 
   return {
