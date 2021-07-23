@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import Router from 'next/router';
+import Link from 'next/link';
 import {
   CardActionArea,
   Container,
@@ -11,9 +14,6 @@ import {
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { favServer } from '../config';
-import { useState } from 'react';
-import Router from 'next/router';
-import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   cardContent: {
@@ -34,12 +34,12 @@ function CocktailCard({ data, fav }) {
   const classes = useStyles();
   const [isFav, setIsFav] = useState(fav);
 
-  const addFav = async (data) => {
+  const addFav = async (drink) => {
     await fetch(`${favServer}`, {
       body: JSON.stringify({
-        strDrink: data.strDrink,
-        strDrinkThumb: data.strDrinkThumb,
-        idDrink: data.idDrink,
+        strDrink: drink.strDrink,
+        strDrinkThumb: drink.strDrinkThumb,
+        idDrink: drink.idDrink,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -49,12 +49,12 @@ function CocktailCard({ data, fav }) {
     setIsFav(true);
   };
 
-  const remFav = async (data) => {
+  const remFav = async (drink) => {
     await fetch(`${favServer}`, {
       body: JSON.stringify({
-        strDrink: data.strDrink,
-        strDrinkThumb: data.strDrinkThumb,
-        idDrink: data.idDrink,
+        strDrink: drink.strDrink,
+        strDrinkThumb: drink.strDrinkThumb,
+        idDrink: drink.idDrink,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -81,17 +81,25 @@ function CocktailCard({ data, fav }) {
             <span data-cy="cocktail-name">{data.strDrink}</span>
           </CardContent>
         </CardActionArea>
-        <Box display={'flex'} justifyContent={'space-between'}>
+        <Box display="flex" justifyContent="space-between">
           <Link href={`/cocktail/${data.idDrink}`} passHref>
             <Button className={classes.btn}>See details</Button>
           </Link>
           {isFav ? (
-            <Button onClick={() => remFav(data)} className={classes.btn}>
+            <Button
+              onClick={() => remFav(data)}
+              className={classes.btn}
+              style={{ backgroundColor: 'rgba(38, 50, 56, 0.04)' }}
+            >
               Remove
               <FavoriteIcon style={{ paddingLeft: '1px' }} />
             </Button>
           ) : (
-            <Button onClick={() => addFav(data)} className={classes.btn}>
+            <Button
+              onClick={() => addFav(data)}
+              className={classes.btn}
+              style={{ backgroundColor: 'rgba(38, 50, 56, 0.04)' }}
+            >
               Add Fav
               <FavoriteBorderIcon style={{ paddingLeft: '3px' }} />
             </Button>

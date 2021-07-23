@@ -2,7 +2,7 @@ import { favDrinks } from '../../../data';
 
 export default function handler(req, res) {
   try {
-    const { method } = req ? req : 'GET';
+    const { method } = req;
     const { strDrink, strDrinkThumb, idDrink } = req.body;
     const i = favDrinks.findIndex((drink) => drink.idDrink === idDrink);
 
@@ -11,14 +11,12 @@ export default function handler(req, res) {
         res.status(200).json(favDrinks);
         break;
       case 'POST':
-        if (i == -1) {
+        if (i === -1) {
           favDrinks.push({
             strDrink,
             strDrinkThumb,
             idDrink,
           });
-        } else {
-          console.log('LREADY');
         }
         res.status(200).json(favDrinks);
         break;

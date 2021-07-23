@@ -1,9 +1,9 @@
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { Grid, Container, Box, Typography, Button } from '@material-ui/core';
 import CocktailCard from '../components/CocktailCard';
 import Header from '../components/Header';
 import { favServer } from '../config';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 function Redirect({ to }) {
   const router = useRouter();
