@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid, Container, CircularProgress } from '@material-ui/core';
 import CocktailCard from '../components/CocktailCard';
 import Header from '../components/Header';
-import { server } from '../config';
+import { favServer, server } from '../config';
 
-export default function Home({ data }) {
+export default function Home({ data, favData }) {
   return (
     <div>
       <Container>
@@ -14,7 +14,14 @@ export default function Home({ data }) {
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
                 <span data-cy="cocktail-card">
-                  <CocktailCard data={drink} />
+                  <CocktailCard
+                    data={drink}
+                    fav={
+                      favData.filter(
+                        (cocktail) => cocktail.idDrink === drink.idDrink,
+                      ).length > 0
+                    }
+                  />
                 </span>
               </Grid>
             ))}{' '}
@@ -30,9 +37,14 @@ export default function Home({ data }) {
 export async function getServerSideProps() {
   const res = await fetch(`${server}`);
   const data = await res.json();
+
+  const resp = await fetch(`${favServer}`);
+  const favData = await resp.json();
+
   return {
     props: {
       data: data.drinks,
+      favData,
     },
   };
 }
