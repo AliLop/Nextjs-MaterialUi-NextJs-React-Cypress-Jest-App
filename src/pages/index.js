@@ -4,17 +4,25 @@ import CocktailCard from '../components/CocktailCard';
 import { favServer, server } from '../config';
 import Header from '../components/Header';
 
-
+export default function Home({ data, favData }) {
   return (
     <div>
       <Container>
-        <Header subtitle="All Cocktails" />
-        <Button onClick={() => setShouldRedirect(true)}>Redirect</Button>
+        <Header subtitle="Cocktail Menu" />
         {data.length ? (
           <Grid container spacing={2}>
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
-                <Cocktail data={drink} />
+                <span data-cy="cocktail-card">
+                  <CocktailCard
+                    data={drink}
+                    fav={
+                      favData.filter(
+                        (cocktail) => cocktail.idDrink === drink.idDrink,
+                      ).length > 0
+                    }
+                  />
+                </span>
               </Grid>
             ))}{' '}
           </Grid>
@@ -26,15 +34,17 @@ import Header from '../components/Header';
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
-  );
+export async function getServerSideProps() {
+  const res = await fetch(`${server}`);
   const data = await res.json();
+
+  const resp = await fetch(`${favServer}`);
+  const favData = await resp.json();
 
   return {
     props: {
       data: data.drinks,
+      favData,
     },
   };
 }
