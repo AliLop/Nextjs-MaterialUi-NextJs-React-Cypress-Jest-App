@@ -6,31 +6,29 @@ import Header from '../components/Header';
 
 export default function Home({ data, favData }) {
   return (
-    <div>
-      <Container>
-        <Header subtitle="Cocktail Menu" />
-        {data.length ? (
-          <Grid container spacing={2}>
-            {data.map((drink) => (
-              <Grid item xs={3} key={drink.idDrink}>
-                <span data-cy="cocktail-card">
-                  <CocktailCard
-                    data={drink}
-                    fav={
-                      favData.filter(
-                        (cocktail) => cocktail.idDrink === drink.idDrink,
-                      ).length > 0
-                    }
-                  />
-                </span>
-              </Grid>
-            ))}{' '}
-          </Grid>
-        ) : (
-          <CircularProgress />
-        )}
-      </Container>
-    </div>
+    <Container>
+      <Header subtitle="Cocktail Menu" />
+      {data.length ? (
+        <Grid container spacing={2}>
+          {data.map((drink) => (
+            <Grid item xs={3} key={drink.idDrink}>
+              <span data-cy="cocktail-card">
+                <CocktailCard
+                  data={drink}
+                  fav={
+                    favData.filter(
+                      (cocktail) => cocktail.idDrink === drink.idDrink,
+                    ).length > 0
+                  }
+                />
+              </span>
+            </Grid>
+          ))}
+        </Grid>
+      ) : (
+        <CircularProgress />
+      )}
+    </Container>
   );
 }
 
