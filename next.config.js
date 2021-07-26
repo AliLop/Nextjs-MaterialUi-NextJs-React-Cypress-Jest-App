@@ -13,6 +13,11 @@ module.exports = {
       issuer: /\.(js|ts)x?$/,
       use: ['@svgr/webpack'],
     });
+    config.module.rules.push({
+      parser: {
+        amd: false,
+      },
+    });
     return config;
   },
 };
