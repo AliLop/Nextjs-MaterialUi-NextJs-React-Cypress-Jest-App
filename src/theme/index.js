@@ -1,28 +1,33 @@
 import { createTheme } from '@material-ui/core/styles';
-import { red, green, amber, blueGrey } from '@material-ui/core/colors';
+import { red, blueGrey } from '@material-ui/core/colors';
 
-// Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3F51B5',
+      main: '#B8860B',
     },
     secondary: {
-      main: green.A400,
+      main: '#FAFAD2',
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: amber,
+      default: '#D3D3D3',
       dark: '#f4f6f8',
-      paper: amber,
+      paper: '#FFEFD5',
     },
     text: {
       primary: blueGrey[900],
-      secondary: blueGrey[600],
+      secondary: '#DAA520',
+      initial: '#f4f6f8',
     },
-    spacing: 6,
+  },
+  spacing: 6,
+  typography: {
+    fontFamily: ['Roboto', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'].join(
+      ',',
+    ),
   },
 });
 

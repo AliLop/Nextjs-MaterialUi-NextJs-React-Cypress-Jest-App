@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
 import Layout from '../components/Layout';
-// import probesService from '../ProbesService';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -21,7 +20,7 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <title>My Cocktails</title>
+        <title>Cocktail Bar</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -32,8 +31,8 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Layout title="My Cocktails">
-          {/* <CssBaseline /> */}
+        <Layout title="Cocktail Bar">
+          <CssBaseline />
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
