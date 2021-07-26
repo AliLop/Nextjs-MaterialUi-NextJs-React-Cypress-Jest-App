@@ -1,5 +1,6 @@
+import Typography from '@material-ui/core/Typography';
 import Image from 'next/image';
-import { Link, makeStyles, Typography } from '@material-ui/core';
+import { Link, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -16,53 +17,41 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <div data-cy="footer">
-      <hr
-        style={{
-          color: '#B8860B',
-          borderWidth: '1px',
-          borderColor: '#B8860B',
-          marginBottom: '0px',
-          marginTop: '15px',
-        }}
-      />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          padding: '20px',
-          backgroundColor: '#FFEFD5',
-        }}
+    <div
+      style={{
+        display: 'flex',
+        cursor: 'pointer',
+        justifyContent: 'center',
+        padding: '10px',
+      }}
+    >
+      <Typography
+        component="span"
+        variant="body2"
+        color="textPrimary"
+        align="center"
       >
-        <Typography
-          component="span"
-          variant="body2"
-          color="textPrimary"
-          align="center"
-          style={{ cursor: 'pointer' }}
+        <Link
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          color="inherit"
         >
-          <Link
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            color="inherit"
-          >
-            <span>
-              <Image
-                src="/vercel.svg"
-                alt="Logo"
-                width={72}
-                height={18}
-                className={classes.logo}
-              />
-            </span>
-            <span className={classes.copy}>
-              {'Copyright © '}
-              {new Date().getFullYear()}.
-            </span>
-          </Link>
-        </Typography>
-      </div>
+          <span>
+            <Image
+              src="/vercel.svg"
+              alt="Logo"
+              width={72}
+              height={18}
+              className={classes.logo}
+            />
+          </span>
+          <span className={classes.copy}>
+            {'Copyright © '}
+            {new Date().getFullYear()}.
+          </span>
+        </Link>
+      </Typography>
     </div>
   );
 }

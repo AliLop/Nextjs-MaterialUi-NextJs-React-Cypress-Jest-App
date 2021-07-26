@@ -1,28 +1,36 @@
-import React from 'react';
-import { Grid, Container, CircularProgress } from '@material-ui/core';
-import CocktailCard from '../components/CocktailCard';
+import React, { useEffect, useState } from 'react';
+import { Grid, Container, CircularProgress, Button } from '@material-ui/core';
+import Cocktail from '../components/Cocktail';
 import Header from '../components/Header';
-import { favServer, server } from '../config';
+import { useRouter } from 'next/router';
 
-export default function Home({ data, favData }) {
+function Redirect({ to }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(to);
+  }, [to]);
+
+  return null;
+}
+
+export default function Home({ data }) {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  if (shouldRedirect) {
+    return <Redirect to="/about" />;
+  }
+
   return (
     <div>
       <Container>
-        <Header subtitle="Cocktail Menu" />
+        <Header subtitle="All Cocktails" />
+        <Button onClick={() => setShouldRedirect(true)}>Redirect</Button>
         {data.length ? (
           <Grid container spacing={2}>
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
-                <span data-cy="cocktail-card">
-                  <CocktailCard
-                    data={drink}
-                    fav={
-                      favData.filter(
-                        (cocktail) => cocktail.idDrink === drink.idDrink,
-                      ).length > 0
-                    }
-                  />
-                </span>
+                <Cocktail data={drink} />
               </Grid>
             ))}{' '}
           </Grid>
@@ -34,17 +42,15 @@ export default function Home({ data, favData }) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(`${server}`);
+export async function getStaticProps() {
+  const res = await fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`,
+  );
   const data = await res.json();
-
-  const resp = await fetch(`${favServer}`);
-  const favData = await resp.json();
 
   return {
     props: {
       data: data.drinks,
-      favData,
     },
   };
 }
