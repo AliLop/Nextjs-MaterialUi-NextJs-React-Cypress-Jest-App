@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Container, CircularProgress } from '@material-ui/core';
 import CocktailCard from '../components/CocktailCard';
-import Header from '../components/Header';
 import { favServer, server } from '../config';
+import Header from '../components/Header';
 
 export default function Home({ data, favData }) {
   return (
