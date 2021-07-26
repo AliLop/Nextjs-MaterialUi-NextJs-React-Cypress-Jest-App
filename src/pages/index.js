@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Grid, Container, CircularProgress, Button } from '@material-ui/core';
-import Cocktail from '../components/Cocktail';
+import React from 'react';
+import { Grid, Container, CircularProgress } from '@material-ui/core';
+import CocktailCard from '../components/CocktailCard';
+import { favServer, server } from '../config';
 import Header from '../components/Header';
-import { useRouter } from 'next/router';
 
-function Redirect({ to }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push(to);
-  }, [to]);
-
-  return null;
-}
-
-export default function Home({ data }) {
-  const [shouldRedirect, setShouldRedirect] = useState(false);
-
-  if (shouldRedirect) {
-    return <Redirect to="/about" />;
-  }
 
   return (
     <div>
