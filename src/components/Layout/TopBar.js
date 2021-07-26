@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 import {
   AppBar,
   Toolbar,
   makeStyles,
   Typography,
   Box,
-  Link,
+  Button,
 } from '@material-ui/core';
 import NavBar from '../NavBar';
 
@@ -22,30 +22,31 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   logo: {
+    textDecoration: 'none',
     cursor: 'pointer',
+    fontFamily: ['Roboto', 'sans-serif'],
   },
 }));
 
 function TopBar() {
   const classes = useStyles();
+  const router = useRouter();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push('/');
+  };
 
   return (
     <AppBar className={classes.root} color="default">
       <Toolbar className={classes.toolbar}>
-        <Box>
-          <Link href="/">
-            <Image
-              src="/vercel.svg"
-              alt="Logo"
-              width={72}
-              height={18}
-              className={classes.logo}
-            />
-          </Link>
+        <Box paddingLeft="20px">
+          <Button className={classes.logo} onClick={handleClick}>
+            <Typography variant="h6" color="secondary">
+              Cocktail Bar
+            </Typography>
+          </Button>
         </Box>
-        <Typography variant="h6" color="secondary">
-          Cocktail Bar
-        </Typography>
         <NavBar />
       </Toolbar>
     </AppBar>

@@ -25,7 +25,9 @@ const theme = createTheme({
   },
   spacing: 6,
   typography: {
-    fontFamily: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['Roboto', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'].join(
+      ',',
+    ),
   },
 });
 
