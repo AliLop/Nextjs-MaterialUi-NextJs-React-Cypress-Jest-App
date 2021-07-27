@@ -1,26 +1,25 @@
-import React from 'react';
-import { apiService } from '../service/cocktailApi.js';
-import { useEffect, useState } from 'react';
 import { Container, Box } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import apiService from '../service/cocktailApi';
 import Header from '../components/Header';
 
-function Random({ data }) {
-  async function getStaticProps() {
-    const data = await apiService.getRandom();
-    return {
-      props: {
-        data,
-      },
-    };
-  }
+async function getStaticProps() {
+  const data = await apiService.getRandom();
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
+function Random({ data }) {
   const [drink, setDrink] = useState(data);
 
   const fetchDrink = async () => {
     const res = await getStaticProps();
     const dataResp = await res;
 
-    console.log('RESP', dataResp);
+    // console.log('RESP', dataResp);
     return dataResp;
   };
 

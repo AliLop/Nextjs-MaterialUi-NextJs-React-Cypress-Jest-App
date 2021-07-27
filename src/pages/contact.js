@@ -1,7 +1,7 @@
 import { Container, Box, Button } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
-import { ContactForm } from '../components/ContactForm';
+import ContactForm from '../components/ContactForm';
 
 function Contact() {
   const router = useRouter();
