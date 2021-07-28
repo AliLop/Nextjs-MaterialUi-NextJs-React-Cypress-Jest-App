@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const PostContactForm = async (values, successCallback, errorCallback) => {
-  console.log(values);
   if (true) successCallback();
   else errorCallback();
 };

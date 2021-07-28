@@ -27,7 +27,7 @@ export default function Favorites({ data }) {
       <Container>
         <Header subtitle="My Favorites" />
         {data.length ? (
-          <Grid container spacing={2}>
+          <Grid container spacing={2} style={{ justifyContent: 'center' }}>
             {data.map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
                 <span data-cy="cocktail-card">

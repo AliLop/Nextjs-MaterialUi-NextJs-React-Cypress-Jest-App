@@ -71,7 +71,7 @@ export default function CocktailPage({ drinkData }) {
                 variant="body1"
                 color="initial"
               >
-                {drinkData.strGlass}{' '}
+                {drinkData.strGlass}
               </Typography>
               <br />
               <br />
@@ -79,7 +79,22 @@ export default function CocktailPage({ drinkData }) {
                 Instructions:
               </Typography>
               <Typography variant="body1" color="initial">
-                <span data-cy="instructions">{drinkData.strInstructions}</span>{' '}
+                <span data-cy="instructions">{drinkData.strInstructions}</span>
+              </Typography>
+              <br />
+              <Typography variant="h6" color="primary">
+                Ingredients:
+              </Typography>
+              <Typography variant="body1" color="initial">
+                <span data-cy="ingredients">{drinkData.strIngredient1}</span>
+                <br />
+                <span data-cy="ingredients">{drinkData.strIngredient2}</span>
+                <br />
+                <span data-cy="ingredients">{drinkData.strIngredient3}</span>
+                <br />
+                <span data-cy="ingredients">{drinkData.strIngredient4}</span>
+                <br />
+                <span data-cy="ingredients">{drinkData.strIngredient5}</span>
               </Typography>
             </CardContent>
           </Card>

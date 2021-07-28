@@ -12,6 +12,8 @@ function NavBar() {
     window = 'about';
   } else if (router.pathname === '/favorites') {
     window = 'fav';
+  } else if (router.pathname === '/contact') {
+    window = 'cont';
   }
 
   return (
@@ -50,9 +52,9 @@ function NavBar() {
         <Typography
           style={{
             paddingRight: '20px',
-            cursor: window === 'contact' ? 'default' : 'pointer',
+            cursor: window === 'cont' ? 'default' : 'pointer',
           }}
-          color={window === 'contact' ? 'textSecondary' : 'secondary'}
+          color={window === 'cont' ? 'textSecondary' : 'secondary'}
         >
           <span data-cy="contact-btn">Contact</span>
         </Typography>
