@@ -27,11 +27,9 @@ function Footer() {
     <footer data-cy="footer">
       <hr
         style={{
-          color: '#B8860B',
-          borderWidth: '1px',
           borderColor: '#B8860B',
           marginBottom: '0px',
-          marginTop: '15px',
+          marginTop: '0px',
         }}
       />
       <Box
@@ -41,7 +39,7 @@ function Footer() {
           color: '#B8860B',
           backgroundColor: '#FFEFD5',
         }}
-        p={6}
+        p={2}
       >
         <Container maxWidth="lg">
           <Grid container spacing={9}>
@@ -67,31 +65,44 @@ function Footer() {
               style={{
                 textAlign: 'center',
                 alignSelf: 'center',
-                display: 'flex',
-                justifyContent: 'space-evenly',
               }}
             >
-              <Link
-                href="https://www.facebook.com/"
-                target="_blank"
-                className={classes.link}
-              >
-                <FacebookIcon />
-              </Link>
-              <Link
-                href="https://github.com/AliLop/Nextjs-MaterialUi-React-Cocktail-App"
-                target="_blank"
-                className={classes.link}
-              >
-                <GitHubIcon />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/aliciahl/"
-                target="_blank"
-                className={classes.link}
-              >
-                <LinkedInIcon />
-              </Link>
+              <Box style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                <Link
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  className={classes.link}
+                >
+                  <FacebookIcon />
+                </Link>
+                <Link
+                  href="https://github.com/AliLop/Nextjs-MaterialUi-React-Cocktail-App"
+                  target="_blank"
+                  className={classes.link}
+                >
+                  <GitHubIcon />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/aliciahl/"
+                  target="_blank"
+                  className={classes.link}
+                >
+                  <LinkedInIcon />
+                </Link>
+              </Box>
+              <Box style={{ textAlign: 'center', paddingTop: '40px' }}>
+                <Link
+                  href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                >
+                  <span className={classes.copy}>
+                    {'Copyright © '}
+                    {new Date().getFullYear()}.
+                  </span>
+                </Link>
+              </Box>
             </Grid>
             <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
               <Box borderBottom={1} p={1}>
@@ -126,26 +137,6 @@ function Footer() {
               </Box>
             </Grid>
           </Grid>
-          <Box p={4} style={{ textAlign: 'center' }}>
-            <Link
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={classes.link}
-            >
-              <Image
-                src="/vercel.svg"
-                alt="Logo"
-                width={72}
-                height={18}
-                className={classes.logo}
-              />
-              <span className={classes.copy}>
-                {'Copyright © '}
-                {new Date().getFullYear()}.
-              </span>
-            </Link>
-          </Box>
         </Container>
       </Box>
     </footer>

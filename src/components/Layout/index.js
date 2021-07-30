@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     height: '92vh',
     flex: '1 1 auto',
     overflow: 'hidden',
-    paddingTop: 64,
+    paddingTop: 60,
     minWidth: 1280,
   },
   contentContainer: {
