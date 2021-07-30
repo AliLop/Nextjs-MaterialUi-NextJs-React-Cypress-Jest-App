@@ -2,7 +2,9 @@ import { Typography, Container, Box, Button, Grid } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 
-function about() {
+function About() {
+  const router = useRouter();
+
   return (
     <Container>
       <Header subtitle="About Cocktail Bar" />
@@ -29,4 +31,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;
