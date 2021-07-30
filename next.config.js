@@ -1,8 +1,10 @@
 module.exports = {
   setupFilesAfterEnv: ['./jest.setup.js'],
-  // future: {
-  //   webpack5: true,
-  // },
+  images: {
+    loader: 'imgix',
+    path: '/',
+  },
+  trailingSlash: true,
   webpack(config) {
     config.module.rules.push({
       // Ref: https://stackoverflow.com/questions/55175445/cant-import-svg-into-next-js
