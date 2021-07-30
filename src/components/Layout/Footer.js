@@ -1,4 +1,3 @@
-
 import { Link, makeStyles, Box, Container, Grid } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -140,7 +139,6 @@ function Footer() {
         </Container>
       </Box>
     </footer>
->>>>>>> main
   );
 }
 
