@@ -64,15 +64,13 @@ export default function Home({ data, favData }) {
       {data.length ? (
         <Grid container spacing={2}>
           {data
-            .filter((val) => {
-              if (searchInput === '') {
-                return val;
-              } else if (
-                val.strDrink.toLowerCase().includes(searchInput.toLowerCase())
-              ) {
-                return val;
-              }
-            })
+            .filter((val) =>
+              searchInput === ''
+                ? val
+                : val.strDrink
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase()) ?? val,
+            )
             .map((drink) => (
               <Grid item xs={3} key={drink.idDrink}>
                 <span data-cy="cocktail-card">

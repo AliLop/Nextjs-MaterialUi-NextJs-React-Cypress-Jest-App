@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Link, makeStyles, Box, Container, Grid } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
