@@ -14,7 +14,7 @@ function Header({ subtitle }) {
             fontSize: 30,
           }}
         >
-          <span data-cy="subtitle">{subtitle}</span>
+          <h3 data-cy="subtitle">{subtitle}</h3>
         </Box>
       </span>
     </Container>

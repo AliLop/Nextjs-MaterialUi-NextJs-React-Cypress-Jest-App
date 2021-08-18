@@ -16,9 +16,7 @@ describe('Contact page', () => {
       const button = screen.getByText('Go back');
       expect(button).toBeInTheDocument();
 
-      console.log('rendering');
-    } else {
-      console.log('window undefined');
+      console.log('rendering contact');
     }
   });
 });
