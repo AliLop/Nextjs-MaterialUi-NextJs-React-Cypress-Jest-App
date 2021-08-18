@@ -10,7 +10,6 @@ describe('Header subtitle', () => {
       render(<Header subtitle={subtitle} />);
 
       expect(screen.getByRole('heading', { name: 'Test subtitle' }));
-      console.log('rendering header');
     }
   });
 });

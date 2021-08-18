@@ -95,14 +95,15 @@ export default function Home({ data, favData }) {
 
 export async function getServerSideProps() {
   const res = await fetch(`${server}`);
-  const data = await res.json();
+  const rowData = await res.json();
+  const data = rowData.drinks;
 
   const resp = await fetch(`${favServer}`);
   const favData = await resp.json();
 
   return {
     props: {
-      data: data.drinks,
+      data,
       favData,
     },
   };

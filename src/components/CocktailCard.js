@@ -100,7 +100,10 @@ function CocktailCard({ data, fav }) {
               className={classes.btn}
               style={{ backgroundColor: 'rgba(38, 50, 56, 0.04)' }}
             >
-              <FavoriteBorderIcon style={{ paddingLeft: '3px' }} />
+              <FavoriteBorderIcon
+                data-testid="favIcon"
+                style={{ paddingLeft: '3px' }}
+              />
             </Button>
           )}
         </Box>

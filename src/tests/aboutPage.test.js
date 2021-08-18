@@ -7,9 +7,10 @@ describe('About page', () => {
     if (typeof window !== 'undefined') {
       render(<AboutPage />);
 
+      expect(screen.getByText('About Cocktail Bar')).toBeInTheDocument();
+
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
-      console.log('rendering about');
     }
   });
 });

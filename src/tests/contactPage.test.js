@@ -10,13 +10,10 @@ describe('Contact page', () => {
       const header = screen.getByText('Contact Us');
       expect(header).toBeInTheDocument();
 
-      const formNameField = screen.getByLabelText('Full Name');
-      expect(formNameField).toBeInTheDocument();
+      expect(screen.getByLabelText('Full Name')).toBeInTheDocument();
 
       const button = screen.getByText('Go back');
       expect(button).toBeInTheDocument();
-
-      console.log('rendering contact');
     }
   });
 });
