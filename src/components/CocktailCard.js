@@ -99,6 +99,7 @@ function CocktailCard({ data, fav }) {
               onClick={() => addFav(data)}
               className={classes.btn}
               style={{ backgroundColor: 'rgba(38, 50, 56, 0.04)' }}
+              data-testid="addFavIcon"
             >
               <FavoriteBorderIcon
                 data-testid="favIcon"

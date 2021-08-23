@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CocktailCard from '../components/CocktailCard';
 
@@ -23,6 +23,10 @@ describe('CocktailCard', () => {
 
       const icon = screen.getByTestId('favIcon');
       expect(icon).toBeVisible();
+
+      const button = screen.getByTestId('addFavIcon');
+      fireEvent.click(button);
+      expect(screen.findByText('Remove'));
     }
   });
 });
