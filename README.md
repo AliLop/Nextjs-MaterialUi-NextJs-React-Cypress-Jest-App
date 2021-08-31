@@ -1,6 +1,6 @@
 # Nextjs + React + Material ui + Cypress + Jest
 
-<img width="550px" src="/public/screenshot.png">
+<img width="550px" src="/public/Screenshot.png">
 
 ## Getting Started
 
