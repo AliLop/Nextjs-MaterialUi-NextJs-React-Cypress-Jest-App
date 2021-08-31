@@ -5,6 +5,7 @@ module.exports = {
     path: '/',
   },
   trailingSlash: true,
+  extends: ['plugin:@next/next/recommended'],
   webpack(config) {
     config.module.rules.push({
       // Ref: https://stackoverflow.com/questions/55175445/cant-import-svg-into-next-js
