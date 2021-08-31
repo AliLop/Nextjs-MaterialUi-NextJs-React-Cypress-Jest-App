@@ -480,6 +480,12 @@ export const cocktails = [
     idDrink: '16178',
   },
   {
+    strDrink: 'Kiwi Martini',
+    strDrinkThumb:
+      'https://www.thecocktaildb.com/images/media/drink/bmxmyq1630407098.jpg',
+    idDrink: '178359',
+  },
+  {
     strDrink: 'Lazy Coconut Paloma',
     strDrinkThumb:
       'https://www.thecocktaildb.com/images/media/drink/rytuex1598719770.jpg',
@@ -492,10 +498,22 @@ export const cocktails = [
     idDrink: '14366',
   },
   {
+    strDrink: 'Lemon Elderflower Spritzer',
+    strDrinkThumb:
+      'https://www.thecocktaildb.com/images/media/drink/125w0o1630407389.jpg',
+    idDrink: '178360',
+  },
+  {
     strDrink: 'Malibu Twister',
     strDrinkThumb:
       'https://www.thecocktaildb.com/images/media/drink/2dwae41504885321.jpg',
     idDrink: '15224',
+  },
+  {
+    strDrink: 'Mango Mojito',
+    strDrinkThumb:
+      'https://www.thecocktaildb.com/images/media/drink/wfqmgm1630406820.jpg',
+    idDrink: '178358',
   },
   {
     strDrink: 'Manhattan',
@@ -580,23 +598,5 @@ export const cocktails = [
     strDrinkThumb:
       'https://www.thecocktaildb.com/images/media/drink/bsvmlg1515792693.jpg',
     idDrink: '17266',
-  },
-  {
-    strDrink: 'Old Fashioned',
-    strDrinkThumb:
-      'https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg',
-    idDrink: '11001',
-  },
-  {
-    strDrink: 'Old Pal',
-    strDrinkThumb:
-      'https://www.thecocktaildb.com/images/media/drink/x03td31521761009.jpg',
-    idDrink: '17827',
-  },
-  {
-    strDrink: 'Orange Rosemary Collins',
-    strDrinkThumb:
-      'https://www.thecocktaildb.com/images/media/drink/mokcas1604179977.jpg',
-    idDrink: '178341',
   },
 ];
