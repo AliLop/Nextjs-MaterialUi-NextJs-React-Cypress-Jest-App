@@ -83,7 +83,7 @@ function CocktailCard({ data, fav }) {
         </CardActionArea>
         <Box display="flex" justifyContent="space-between">
           <Link href={`/cocktail/${data.idDrink}`} passHref>
-            <Button className={classes.btn}>See details</Button>
+            <Button className={classes.btn}>Details</Button>
           </Link>
           {isFav ? (
             <Button
@@ -99,9 +99,12 @@ function CocktailCard({ data, fav }) {
               onClick={() => addFav(data)}
               className={classes.btn}
               style={{ backgroundColor: 'rgba(38, 50, 56, 0.04)' }}
+              data-testid="addFavIcon"
             >
-              Add Fav
-              <FavoriteBorderIcon style={{ paddingLeft: '3px' }} />
+              <FavoriteBorderIcon
+                data-testid="favIcon"
+                style={{ paddingLeft: '3px' }}
+              />
             </Button>
           )}
         </Box>

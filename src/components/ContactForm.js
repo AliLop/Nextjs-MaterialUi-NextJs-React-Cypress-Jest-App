@@ -77,6 +77,7 @@ function ContactForm() {
         />
       ))}
       <Button
+        data-testid="sendButton"
         variant="contained"
         type="submit"
         color="secondary"
