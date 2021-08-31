@@ -1,4 +1,4 @@
-# Nextjs + React + Material ui + Cypress
+# Nextjs + React + Material ui + Cypress + Jest
 
 <img width="550px" src="/public/screenshot.png">
 
